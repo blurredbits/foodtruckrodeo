@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @food_truck.name
+%p
+  %b Address:
+  = @food_truck.address
+%p
+  %b Latitude:
+  = @food_truck.latitude
+%p
+  %b Longitude:
+  = @food_truck.longitude
+
+= link_to 'Edit', edit_food_truck_path(@food_truck)
+\|
+= link_to 'Back', food_trucks_path

@@ -1,1 +1,7 @@
+:javascript
+  var the_markers = #{raw @locations.to_json}
+
 %h1 Food Truck Rodeo
+
+%div{style: "width: 800px;border:1px dashed red"}
+  #map{style: "width: 800px;height: 400px"}
