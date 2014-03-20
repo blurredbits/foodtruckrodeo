@@ -30,7 +30,7 @@ GEM
       rake (>= 0.8.7)
     arel (4.0.2)
     atomic (1.1.16)
-    bootstrap-sass (3.1.0.2)
+    bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     brakeman (2.3.1)
       erubis (~> 2.6)
@@ -107,6 +107,8 @@ GEM
       pry (>= 0.9.10)
     puma (2.8.1)
       rack (>= 1.1, < 2.0)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -197,7 +199,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 2.6.0)
-  bootstrap-sass (~> 3.1.0.2)
+  bootstrap-sass (~> 3.1.1)
   brakeman (~> 2.3.1)
   capybara (~> 2.2.1)
   coffee-rails (~> 4.0.0)
@@ -211,6 +213,7 @@ DEPENDENCIES
   pg (~> 0.17.1)
   pry-rails (~> 0.3.2)
   puma (~> 2.8.1)
+  quiet_assets
   rails (= 4.0.2)
   rails_12factor (~> 0.0.2)
   rspec-nc

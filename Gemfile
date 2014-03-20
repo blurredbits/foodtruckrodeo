@@ -17,15 +17,12 @@ gem 'sass-rails',         '~> 4.0.0'
 gem 'uglifier',           '>= 1.3.0'
 gem 'turbolinks'
 
-# authentication/authorization
-
-
 # servers/drivers
 gem 'pg',                 '~> 0.17.1'
 gem 'puma',               '~> 2.8.1'
 
 # view gems
-gem 'bootstrap-sass',             '~> 3.1.0.2'
+gem 'bootstrap-sass',             '~> 3.1.1'
 gem 'haml-rails',                 '~> 0.5.3'
 gem 'jbuilder',                   '~> 2.0.2'
 gem 'jquery-rails',               '~> 2.1.4'
@@ -50,6 +47,7 @@ group :development, :test do
   gem 'pry-rails',            '~> 0.3.2'
   gem 'rspec-rails',          '~> 2.14.1'
   gem 'capybara',             '~> 2.2.1'
+  gem 'quiet_assets'
 end
 
 # remote
