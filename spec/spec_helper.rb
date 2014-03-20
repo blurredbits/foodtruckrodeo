@@ -16,32 +16,32 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
 
-#  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryGirl::Syntax::Methods
 
-#  config.include Rails.application.routes.url_helpers
+  config.include Rails.application.routes.url_helpers
 
-#   config.before :suite do
-#     [:active_record].each do |orm|
-#       DatabaseCleaner[orm].strategy = :truncation
-#       DatabaseCleaner[orm].clean_with :truncation
-#     end
-#   end
+  config.before :suite do
+    [:active_record].each do |orm|
+      DatabaseCleaner[orm].strategy = :truncation
+      DatabaseCleaner[orm].clean_with :truncation
+    end
+  end
 
-#   config.before do
-#     [:active_record].each do |orm|
-#       DatabaseCleaner[orm].start
-#     end
-#   end
+  config.before do
+    [:active_record].each do |orm|
+      DatabaseCleaner[orm].start
+    end
+  end
 
-#   config.after do
-#     [:active_record].each do |orm|
-#       DatabaseCleaner[orm].clean
-#     end
-#   end
+  config.after do
+    [:active_record].each do |orm|
+      DatabaseCleaner[orm].clean
+    end
+  end
 
   config.expect_with :rspec do |expectations|
-    expectations.syntax = :expect
-  end
+    expectations.syntax = :expect
+  end
 
   #config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -62,6 +62,6 @@ RSpec.configure do |config|
   #config.order = "random"
 
 
-  #config.include Capybara::DSL
+  config.include Capybara::DSL
 
 end
