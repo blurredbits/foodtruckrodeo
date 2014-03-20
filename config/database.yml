@@ -6,7 +6,6 @@ pg: &pg
   adapter:  postgresql
   host:     localhost
   encoding: utf8
-  username: dbuser
 
 #------------------------------------------------------------
 # environments
