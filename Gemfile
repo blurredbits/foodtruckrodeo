@@ -35,7 +35,7 @@ gem 'jquery-rails',               '~> 2.1.4'
 #gem 'kaminari',                       '~> 0.15.1'
 gem 'gmaps4rails',                '~> 2.1.2'
 gem 'rspec-nc'
-
+gem 'geocoder'
 
 #----------------------------------------------
 # environments
