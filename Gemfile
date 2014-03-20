@@ -33,6 +33,8 @@ gem 'jquery-rails',               '~> 2.1.4'
 
 # other gems
 #gem 'kaminari',                       '~> 0.15.1'
+gem 'gmaps4rails',                '~> 2.1.2'
+gem 'rspec-nc'
 
 
 #----------------------------------------------
@@ -41,13 +43,13 @@ gem 'jquery-rails',               '~> 2.1.4'
 
 # local
 group :development, :test do
-  gem 'capybara',             '~> 2.2.1'
   gem 'annotate',             '~> 2.6.0'
   gem 'brakeman',             '~> 2.3.1', require: false
   gem 'database_cleaner',     '~> 1.2.0'
   gem 'factory_girl_rails',   '~> 4.4.1'
   gem 'pry-rails',            '~> 0.3.2'
   gem 'rspec-rails',          '~> 2.14.1'
+  gem 'capybara',             '~> 2.2.1'
 end
 
 # remote
