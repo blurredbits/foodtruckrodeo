@@ -16,6 +16,14 @@ class FoodTrucksController < ApplicationController
       })
     end
 
+   # @lat_lng = cookies[:lat_lng].split("|") if cookies[:lat_lng]
+    if cookies[:lat_lng]&& cookies[:lat_lng].split("|").length == 2
+      @locations << Gmaps4rails.build_markers([cookies[:lat_lng].split("|")]) { |start, marker|
+         marker.lat start[0]
+         marker.lng start[1]
+         marker.infowindow 'Start'
+      }.first
+    end
   end
 
   # GET /food_trucks/1
@@ -36,9 +44,9 @@ class FoodTrucksController < ApplicationController
     @food_truck = FoodTruck.new(food_truck_params)
 
       if @food_truck.save
-        format.html { redirect_to @food_truck, notice: 'Food truck was successfully created.' }
+        redirect_to @food_truck, notice: 'Food truck was successfully created.'
       else
-        format.html { render action: 'new' }
+        render action: 'new'
       end
   end
 
@@ -67,6 +75,6 @@ class FoodTrucksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_truck_params
-      params.require(:food_truck).permit(:latitude, :longitude, :address, :name)
+      params.require(:food_truck).permit(:address, :name)
     end
 end

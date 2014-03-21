@@ -1,6 +1,11 @@
 :javascript
   var the_markers = #{raw @locations.to_json}
 
+- unless @lat_lng
+  <script>
+  getGeoLocation();
+  </script
+
 %h1 Food Truck Rodeo
 
 %div{style: "width: 800px;border:1px dashed red"}
@@ -29,5 +34,7 @@
       %td= link_to 'Destroy', food_truck, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
+
+= @lat_lng if @lat_lng
 
 = link_to 'New Food truck', new_food_truck_path
