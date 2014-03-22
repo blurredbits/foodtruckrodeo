@@ -1,0 +1,9 @@
+#map
+
+:javascript
+  var the_markers = #{raw @locations.to_json}
+
+- unless @lat_lng
+  <script>
+  getGeoLocation();
+  </script
