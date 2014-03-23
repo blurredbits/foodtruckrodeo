@@ -10,9 +10,9 @@ function setGeoCookie(position) {
 }
 
 function showTrucks(the_markers){
-    handler = Gmaps.build('Google');
+    var handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers(the_markers);
+        var markers = handler.addMarkers(the_markers);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
     });
