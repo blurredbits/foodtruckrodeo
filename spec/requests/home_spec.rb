@@ -4,7 +4,7 @@ describe 'home' do
 
   it 'loads' do
     visit root_path
-    expect(page).to have_text "Food Truck Rodeo"
+    expect(page).to have_selector('div#map')
   end
 
 end
