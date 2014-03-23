@@ -1,5 +1,11 @@
 %p#notice= notice
 
+
+#map
+
+:javascript
+  var the_markers = #{raw @locations.to_json}
+
 %p
   %b Name:
   = @food_truck.name
@@ -15,4 +21,6 @@
 
 = link_to 'Edit', edit_food_truck_path(@food_truck)
 \|
-= link_to 'Back', food_trucks_path
+= link_to 'Food Trucks', food_trucks_path
+\|
+= link_to 'Home', root_path
