@@ -54,9 +54,9 @@ class FoodTrucksController < ApplicationController
   # PATCH/PUT /food_trucks/1.json
   def update
     if @food_truck.update(food_truck_params)
-      format.html { redirect_to @food_truck, notice: 'Food truck was successfully updated.' }
+      redirect_to @food_truck, notice: 'Food truck was successfully updated.'
     else
-      format.html { render action: 'edit' }
+      render action: 'edit'
     end
   end
 
@@ -64,7 +64,7 @@ class FoodTrucksController < ApplicationController
   # DELETE /food_trucks/1.json
   def destroy
     @food_truck.destroy
-    format.html { redirect_to food_trucks_url }
+    redirect_to food_trucks_url
   end
 
   private
