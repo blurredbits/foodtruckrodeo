@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+FoodTruck.create(name: "Mike's MexicTruck", address: 'Broomfield, CO', url:'mikestrucks.com')
+FoodTruck.create(name: "Mark's Food Truck", address: 'Fort Collins, CO', url:'mikestrucks.com')
+FoodTruck.create(name: "Beth's Mountain Waffles", address: 'Park City, UT', url:'waffleybeth.com')
+FoodTruck.create(name: "Raman's Food Truck", address: 'Lafayette, CO', url:'velobuffsfood.com')
+FoodTruck.create(name: "Carl's Bee Beer Truck", address: 'Sandy, UT', url:'carlsbeebeer.com')
