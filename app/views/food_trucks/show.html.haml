@@ -1,10 +1,6 @@
 %p#notice= notice
 
-
-#map
-
-:javascript
-  var the_markers = #{raw @locations.to_json}
+#truck
 
 %p
   %b Name:
@@ -24,3 +20,7 @@
 = link_to 'Food Trucks', food_trucks_path
 \|
 = link_to 'Home', root_path
+
+:javascript
+  var the_markers = #{raw @location.to_json};
+  $(document).ready(function(){ showTruck(the_markers); });

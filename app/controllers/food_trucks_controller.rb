@@ -8,6 +8,16 @@ class FoodTrucksController < ApplicationController
 
   # GET /food_trucks/1
   def show
+    @location = Gmaps4rails.build_markers(@food_truck) do |truck, marker|
+      marker.lat  truck.latitude
+      marker.lng  truck.longitude
+      marker.infowindow truck.name
+      marker.picture ({
+          url:  "/assets/food_truck.png",
+          width:  49,
+          height: 32
+      })
+    end
   end
 
   # GET /food_trucks/new
