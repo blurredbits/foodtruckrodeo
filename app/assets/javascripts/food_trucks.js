@@ -1,5 +1,4 @@
-window.onunload = function () {
-};
+window.onunload = function () {};
 
 function getGeoLocation() {
     navigator.geolocation.getCurrentPosition(setGeoCookie);
