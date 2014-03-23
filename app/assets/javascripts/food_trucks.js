@@ -15,6 +15,7 @@ function showTrucks(the_markers){
         var markers = handler.addMarkers(the_markers);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
+        //handler.setZoom(7);
     });
 }
 
