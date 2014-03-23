@@ -1,5 +1,7 @@
 %p#notice= notice
 
+#truck
+
 %p
   %b Name:
   = @food_truck.name
@@ -15,4 +17,10 @@
 
 = link_to 'Edit', edit_food_truck_path(@food_truck)
 \|
-= link_to 'Back', food_trucks_path
+= link_to 'Food Trucks', food_trucks_path
+\|
+= link_to 'Home', root_path
+
+:javascript
+  var the_markers = #{raw @location.to_json};
+  $(document).ready(function(){ showTruck(the_markers); });
