@@ -1,4 +1,4 @@
-window.onunload = function(){};
+window.onunload = function () {};
 
 function getGeoLocation() {
     navigator.geolocation.getCurrentPosition(setGeoCookie);
@@ -9,20 +9,26 @@ function setGeoCookie(position) {
     document.cookie = "lat_lng=" + escape(cookie_val);
 }
 
-function showTrucks(the_markers){
+function showTrucks(the_markers) {
     var handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function () {
         var markers = handler.addMarkers(the_markers);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
     });
 }
 
-function showTruck(the_markers){
+function showTruck(the_markers) {
+    if (!hasCoords(the_markers[0])) { return false; }
+
     var handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'truck'}}, function(){
+    handler.buildMap({ provider: {}, internal: {id: 'truck'}}, function () {
         var markers = handler.addMarkers(the_markers);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
     });
+}
+
+function hasCoords(truck_obj) {
+    return ( _.has(truck_obj, 'lat') && _.isFinite(truck_obj.lat) && _.has(truck_obj, 'lng') && _.isFinite(truck_obj.lng));
 }
