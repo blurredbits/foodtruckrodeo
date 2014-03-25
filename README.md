@@ -12,10 +12,13 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
+1. Run `rake:db:setup`
 
 * Database initialization
+1. creation will run seeds. Don't run `rake:db:seed` by yourself or you might duplicate sample records.
 
 * How to run the test suite
+1. `rspec` or `bundle exec rspec`
 
 * Services (job queues, cache servers, search engines, etc.)
 
