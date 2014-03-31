@@ -18,12 +18,17 @@ $
 
 */
 
+body, html{
+  height:100%; /*so we can give the map div a height and force the navbar where we want it*/
+}
+
+body{
+  padding-bottom: 50px;
+
+}
 #map{
   width: 100%;
   height: 100%;
-  position:absolute;
-  left:0px;
-  top:0px;
 }
 
 #truck{

@@ -1,5 +1,12 @@
 window.onunload = function () {};
 
+
+function ensureGeoLocation(){
+    if (document.cookie.indexOf('_lng') < 0){
+        getGeoLocation();
+    }
+}
+
 function getGeoLocation() {
     navigator.geolocation.getCurrentPosition(setGeoCookie);
 }

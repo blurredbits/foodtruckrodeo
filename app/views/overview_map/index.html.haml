@@ -2,9 +2,5 @@
 
 :javascript
   var the_markers = #{raw @locations.to_json}
-  $(document).ready(function(){showTrucks(the_markers);})
+  $(document).ready(function(){ensureGeoLocation();showTrucks(the_markers);})
 
-- unless @lat_lng
-  <script>
-  getGeoLocation();
-  </script
