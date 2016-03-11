@@ -4,7 +4,7 @@
 
 source "http://rubygems.org"
 
-ruby '2.0.0'
+ruby '2.2.4'
 
 #----------------------------------------------
 # common gems
@@ -15,11 +15,10 @@ gem 'rails',              '4.0.2'
 gem 'coffee-rails',       '~> 4.0.0'
 gem 'sass-rails',         '~> 4.0.0'
 gem 'uglifier',           '>= 1.3.0'
-gem 'turbolinks'
 
 # servers/drivers
 gem 'pg',                 '~> 0.17.1'
-gem 'puma',               '~> 2.8.1'
+gem 'puma'
 
 # view gems
 gem 'bootstrap-sass',             '~> 3.1.1'
@@ -52,5 +51,5 @@ end
 
 # remote
 group :production do
-  gem 'rails_12factor',       '~> 0.0.2'
+  gem 'rails_12factor'
 end
