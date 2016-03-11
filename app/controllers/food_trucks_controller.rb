@@ -13,7 +13,7 @@ class FoodTrucksController < ApplicationController
       marker.lng  truck.longitude
       marker.infowindow truck.name
       marker.picture ({
-          url:  asset_url("food_truck.png"),
+          url:  image_url("food_truck.png"),
           width:  49,
           height: 32
       })
