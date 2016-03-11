@@ -1,27 +1,27 @@
-%h1 Listing food_trucks
+.container
+  .row
+    %h1 Food Trucks
 
-%table
-  %tr
-    %th Name
-    %th Address
-    %th Latitude
-    %th Longitude
-    %th
-    %th
-    %th
+    %table.table.table-striped
+      %tr
+        %th Name
+        %th Address
+        %th Latitude
+        %th Longitude
+        %th
+        %th
+        %th
 
-  - @food_trucks.each do |food_truck|
-    %tr
-      %td= food_truck.name
-      %td= food_truck.address
-      %td= food_truck.latitude
-      %td= food_truck.longitude
-      %td= link_to 'Show', food_truck
-      %td= link_to 'Edit', edit_food_truck_path(food_truck)
-      %td= link_to 'Destroy', food_truck, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - @food_trucks.each do |food_truck|
+        %tr
+          %td= food_truck.name
+          %td= food_truck.address
+          %td= food_truck.latitude
+          %td= food_truck.longitude
+          %td= link_to 'Show', food_truck
+          %td= link_to 'Edit', edit_food_truck_path(food_truck)
+          %td= link_to 'Destroy', food_truck, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
+    %br
 
-= @lat_lng if @lat_lng
-
-= link_to 'New Food truck', new_food_truck_path
+    = link_to 'New Food Truck', new_food_truck_path

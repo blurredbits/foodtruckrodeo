@@ -1,29 +1,31 @@
-%p#notice= notice
+.container
+  .row
+    %p#notice= notice
 
-#truck
+    #truck
 
-%p
-  %b Name:
-  = @food_truck.name
-%p
-  %b Address:
-  = @food_truck.address
-%p
-  %b Website:
-  = @food_truck.url
-%p
-  %b Latitude:
-  = @food_truck.latitude
-%p
-  %b Longitude:
-  = @food_truck.longitude
+    %p
+      %b Name:
+      = @food_truck.name
+    %p
+      %b Address:
+      = @food_truck.address
+    %p
+      %b Website:
+      = @food_truck.url
+    %p
+      %b Latitude:
+      = @food_truck.latitude
+    %p
+      %b Longitude:
+      = @food_truck.longitude
 
-= link_to 'Edit', edit_food_truck_path(@food_truck)
-\|
-= link_to 'Food Trucks', food_trucks_path
-\|
-= link_to 'Home', root_path
+    = link_to 'Edit', edit_food_truck_path(@food_truck)
+    \|
+    = link_to 'Food Trucks', food_trucks_path
+    \|
+    = link_to 'Home', root_path
 
-:javascript
-  var the_markers = #{raw @location.to_json};
-  $(document).ready(function(){ showTruck(the_markers); });
+    :javascript
+      var the_markers = #{raw @location.to_json};
+      $(document).ready(function(){ showTruck(the_markers); });

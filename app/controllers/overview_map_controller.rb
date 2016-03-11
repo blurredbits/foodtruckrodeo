@@ -1,34 +1,17 @@
 class OverviewMapController < ApplicationController
 
-  RANGE = 5 #miles
+  RANGE = 50 #miles
 
   def index
-    if user_location?
-      @food_trucks = FoodTruck.near([user_latitude, user_longitude], RANGE)
-    else
-      @food_trucks = FoodTruck.all
-    end
+  #  if user_location?
+  #    @food_trucks = FoodTruck.near([user_latitude, user_longitude], RANGE)
+  #  else
+      @food_trucks = FoodTruck.where("latitude is not null").where("longitude is not null")
+ #   end
 
-    @locations = Gmaps4rails.build_markers(@food_trucks) do |truck, marker|
-      marker.lat  truck.latitude
-      marker.lng  truck.longitude
-      marker.infowindow render_to_string(partial: "/food_trucks/infowindow", locals: { truck: truck} )
-      marker.picture ({
-          url:  "/assets/food_truck.png",
-          width:  49,
-          height: 32
-      })
-    end
+    @locations = truck_location_places
 
-    # @lat_lng = cookies[:lat_lng].split("|") if cookies[:lat_lng]
-    if user_location?
-      @locations << Gmaps4rails.build_markers([cookies[:lat_lng].split("|")]) { |start, marker|
-        marker.lat start[0]
-        marker.lng start[1]
-        marker.infowindow 'Start'
-      }.first
-    end
-
+   #   @locations << user_location_place if user_location?
   end
 
   private
@@ -45,6 +28,27 @@ class OverviewMapController < ApplicationController
   def user_longitude
     cookie = cookies[:lat_lng].split("|")
     cookie[1]
+  end
+
+  def truck_location_places
+    Gmaps4rails.build_markers(@food_trucks) do |truck, marker|
+      marker.lat  truck.latitude
+      marker.lng  truck.longitude
+      marker.infowindow render_to_string(partial: "/food_trucks/infowindow", locals: { truck: truck} )
+      marker.picture ({
+          url:  "/assets/food_truck.png",
+          width:  49,
+          height: 32
+      })
+    end
+  end
+
+  def user_location_place
+    Gmaps4rails.build_markers([cookies[:lat_lng].split("|")]) { |start, marker|
+      marker.lat start[0]
+      marker.lng start[1]
+      marker.infowindow 'Start'
+    }.first
   end
 
 end

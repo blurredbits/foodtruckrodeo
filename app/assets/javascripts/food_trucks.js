@@ -1,14 +1,21 @@
-window.onunload = function () {};
-
 
 function ensureGeoLocation(){
     if (document.cookie.indexOf('_lng') < 0){
+        console.log("don't have user's location");
         getGeoLocation();
+    }else{
+        console.log("we know the user's location");
     }
 }
 
 function getGeoLocation() {
-    navigator.geolocation.getCurrentPosition(setGeoCookie);
+    return false;
+    console.log("requesting users location");
+    navigator.geolocation.getCurrentPosition(setGeoCookie, deniedCookie);
+}
+
+function deniedCookie() {
+    console.log("denied");
 }
 
 function setGeoCookie(position) {
