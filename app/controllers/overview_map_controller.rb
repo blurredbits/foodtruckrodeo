@@ -35,11 +35,11 @@ class OverviewMapController < ApplicationController
       marker.lat  truck.latitude
       marker.lng  truck.longitude
       marker.infowindow render_to_string(partial: "/food_trucks/infowindow", locals: { truck: truck} )
-      marker.picture ({
-          url:  "/assets/food_truck.png",
-          width:  49,
-          height: 32
-      })
+     # marker.picture ({
+     #     url:  "food_truck.png",
+     #     width:  49,
+     #     height: 32
+     # })
     end
   end
 

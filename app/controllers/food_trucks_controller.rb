@@ -12,11 +12,11 @@ class FoodTrucksController < ApplicationController
       marker.lat  truck.latitude
       marker.lng  truck.longitude
       marker.infowindow truck.name
-      marker.picture ({
-          url:  "food_truck.png",
-          width:  49,
-          height: 32
-      })
+      #marker.picture ({
+      #    url:  "food_truck.png",
+      #    width:  49,
+      #    height: 32
+      #})
     end
   end
 
